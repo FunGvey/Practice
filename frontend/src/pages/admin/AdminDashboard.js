@@ -50,10 +50,10 @@ const AdminDashboard = () => {
 
     return (
         <>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex' }} Color="#202125">
                 <CssBaseline />
-                <AppBar open={open} position='absolute'>
-                    <Toolbar sx={{ pr: '24px' }}>
+                <AppBar open={open} position='absolute' >
+                    <Toolbar sx={{ pr: '24px', backgroundColor:"#202125"}}>
                         <IconButton
                             edge="start"
                             color="inherit"
@@ -70,6 +70,7 @@ const AdminDashboard = () => {
                             component="h1"
                             variant="h6"
                             color="inherit"
+                            //backgroundColor="#202125"
                             noWrap
                             sx={{ flexGrow: 1 }}
                         >
