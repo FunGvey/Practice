@@ -26,34 +26,33 @@ const Homepage = () => {
                     <Grid item xs={12} md={6}>
                         <StyledPaper elevation={3}>
                             <StyledTitle>
-                                Welcome to
+                                Добро пожаловать
                                 <br />
-                                School Management
-                                <br />
-                                System
+                                в систему управления школой
+                      
                             </StyledTitle>
                             <StyledText>
-                                Streamline school management, class organization, and add students and faculty.
-                                Seamlessly track attendance, assess performance, and provide feedback.
-                                Access records, view marks, and communicate effortlessly.
+                                Упростите управление школой, организацию классов, добавление учеников и преподавателей.<br />
+                                Отслеживайте посещаемость, оценивайте успеваемость и предоставляйте обратную связь.<br />
+                                Доступ к записям, просмотр оценок и общение без лишних усилий.
                             </StyledText>
                             <StyledBox>
                                 <StyledLink to="/choose">
                                     <LightPurpleButton variant="contained" fullWidth>
-                                        Login
+                                        Войти
                                     </LightPurpleButton>
                                 </StyledLink>
                                 <StyledLink to="/chooseasguest">
                                     <Button variant="outlined" fullWidth
                                         sx={{ mt: 2, mb: 3, color: "#ffffff", borderColor: "#01b075" }}
                                     >
-                                        Login as Guest
+                                        Войти как гость
                                     </Button>
                                 </StyledLink>
                                 <StyledText>
-                                    Don't have an account?{' '}
+                                    У вас нет аккаунта?{' '}
                                     <Link to="/Adminregister" style={{color:"#ffffff"}}>
-                                        Sign up
+                                        Регистрация
                                     </Link>
                                 </StyledText>
                             </StyledBox>

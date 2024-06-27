@@ -139,10 +139,10 @@ const LoginPage = ({ role }) => {
                         }}
                     >
                         <StyledTypography variant="h4" sx={{ mb: 2 }}>
-                            {role} Login
+                            {role} Логин
                         </StyledTypography>
                         <StyledTypography variant="h7">
-                            Welcome back! Please enter your details
+                            С возвращением! Пожалуйста, введите ваши данные
                         </StyledTypography>
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
                             {role === "Student" ? (
@@ -152,13 +152,13 @@ const LoginPage = ({ role }) => {
                                         required
                                         fullWidth
                                         id="rollNumber"
-                                        label="Enter your Roll Number"
+                                        label="Введите свой номер зачетки"
                                         name="rollNumber"
                                         autoComplete="off"
                                         type="number"
                                         autoFocus
                                         error={rollNumberError}
-                                        helperText={rollNumberError && 'Roll Number is required'}
+                                        helperText={rollNumberError && 'Номер зачетки обязателен'}
                                         onChange={handleInputChange}
                                     />
                                     <StyledTextField
@@ -166,12 +166,12 @@ const LoginPage = ({ role }) => {
                                         required
                                         fullWidth
                                         id="studentName"
-                                        label="Enter your name"
+                                        label="Введите имя"
                                         name="studentName"
                                         autoComplete="name"
                                         autoFocus
                                         error={studentNameError}
-                                        helperText={studentNameError && 'Name is required'}
+                                        helperText={studentNameError && 'Имя обязательно'}
                                         onChange={handleInputChange}
                                     />
                                 </>
@@ -181,12 +181,12 @@ const LoginPage = ({ role }) => {
                                     required
                                     fullWidth
                                     id="email"
-                                    label="Enter your email"
+                                    label="Введите email"
                                     name="email"
                                     autoComplete="email"
                                     autoFocus
                                     error={emailError}
-                                    helperText={emailError && 'Email is required'}
+                                    helperText={emailError && 'Email обязателен'}
                                     onChange={handleInputChange}
                                 />
                             )}
@@ -195,12 +195,12 @@ const LoginPage = ({ role }) => {
                                 required
                                 fullWidth
                                 name="password"
-                                label="Password"
+                                label="Пароль"
                                 type={toggle ? 'text' : 'password'}
                                 id="password"
                                 autoComplete="current-password"
                                 error={passwordError}
-                                helperText={passwordError && 'Password is required'}
+                                helperText={passwordError && 'Пароль обязателен'}
                                 onChange={handleInputChange}
                                 InputProps={{
                                     endAdornment: (
@@ -219,10 +219,10 @@ const LoginPage = ({ role }) => {
                             <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
                                 <StyledFormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
-                                    label="Remember me"
+                                    label="Запомнить меня"
                                 />
                                 <StyledLink href="#">
-                                    Forgot password?
+                                    Забыли пароль?
                                 </StyledLink>
                             </Grid>
                             <LightPurpleButton
@@ -233,7 +233,7 @@ const LoginPage = ({ role }) => {
                             >
                                 {loader ?
                                     <CircularProgress size={24} color="inherit" />
-                                    : "Login"}
+                                    : "Войти"}
                             </LightPurpleButton>
                             <StyledGuestButton
                                 fullWidth
@@ -243,18 +243,18 @@ const LoginPage = ({ role }) => {
                             >
                                 {guestLoader ?
                                     <CircularProgress size={24} color="inherit" />
-                                    : "Login as Guest"}
+                                    : "Войти как гость"}
                             </StyledGuestButton>
                             {role === "Admin" &&
                                 <Grid container>
                                     <Grid item>
                                         <StyledAccountText>
-                                            Don't have an account?
+                                            У вас нет аккаунта?
                                         </StyledAccountText>
                                     </Grid>
                                     <Grid item sx={{ ml: 2 }}>
                                         <StyledSignUpLink to="/Adminregister">
-                                            Sign up
+                                            Зарегистрироваться
                                         </StyledSignUpLink>
                                     </Grid>
                                 </Grid>
@@ -282,7 +282,7 @@ const LoginPage = ({ role }) => {
                 open={guestLoader}
             >
                 <CircularProgress color="primary" />
-                Please Wait
+                Пожалуйста, подождите
             </Backdrop>
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </ThemeProvider>

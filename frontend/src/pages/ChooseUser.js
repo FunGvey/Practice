@@ -84,9 +84,9 @@ const ChooseUser = ({ visitor }) => {
                   <AccountCircle fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Admin
+                  Администратор
                 </StyledTypography>
-                Login as an administrator to access the dashboard to manage app data.
+                Войдите в систему как администратор, чтобы получить доступ к приборной панели для управления данными приложения.
               </StyledPaper>
             </div>
           </Grid>
@@ -97,9 +97,9 @@ const ChooseUser = ({ visitor }) => {
                   <School fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Student
+                  Студент
                 </StyledTypography>
-                Login as a student to explore course materials and assignments.
+                Войдите в систему как студент, чтобы изучить материалы и задания курса.
               </div>
             </StyledPaper>
           </Grid>
@@ -110,9 +110,9 @@ const ChooseUser = ({ visitor }) => {
                   <Group fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Teacher
+                  Учитель
                 </StyledTypography>
-                Login as a teacher to create courses, assignments, and track student progress.
+                Войдите в систему как преподаватель, чтобы создавать курсы, задания и отслеживать успехи учеников.
               </div>
             </StyledPaper>
           </Grid>
