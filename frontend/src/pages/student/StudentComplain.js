@@ -67,13 +67,13 @@ const StudentComplain = () => {
                 >
                     <div>
                         <Stack spacing={1} sx={{ mb: 3 }}>
-                            <Typography variant="h4">Complain</Typography>
+                            <Typography variant="h4">Жалоба</Typography>
                         </Stack>
                         <form onSubmit={submitHandler}>
                             <Stack spacing={3}>
                                 <TextField
                                     fullWidth
-                                    label="Select Date"
+                                    label="Выбрать дату"
                                     type="date"
                                     value={date}
                                     onChange={(event) => setDate(event.target.value)} required
@@ -83,7 +83,7 @@ const StudentComplain = () => {
                                 />
                                 <TextField
                                     fullWidth
-                                    label="Write your complain"
+                                    label="Напишите вашу жалобу"
                                     variant="outlined"
                                     value={complaint}
                                     onChange={(event) => {

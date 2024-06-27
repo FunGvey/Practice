@@ -47,13 +47,13 @@ const StudentSubjects = () => {
         return (
             <>
                 <Typography variant="h4" align="center" gutterBottom>
-                    Subject Marks
+                    Оценки предмета
                 </Typography>
                 <Table>
                     <TableHead>
                         <StyledTableRow>
-                            <StyledTableCell>Subject</StyledTableCell>
-                            <StyledTableCell>Marks</StyledTableCell>
+                            <StyledTableCell>Предмет</StyledTableCell>
+                            <StyledTableCell>Оценки</StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
                     <TableBody>
@@ -82,7 +82,7 @@ const StudentSubjects = () => {
         return (
             <Container>
                 <Typography variant="h4" align="center" gutterBottom>
-                    Class Details
+                    Детали Предмета
                 </Typography>
                 <Typography variant="h5" gutterBottom>
                     You are currently in Class {sclassDetails && sclassDetails.sclassName}

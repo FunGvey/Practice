@@ -89,13 +89,13 @@ const AdminRegisterPage = () => {
                         }}
                     >
                         <Typography variant="h4" sx={{ mb: 2, color: "#2c2143" }}>
-                            Admin Register
+                            Регистрация Администратора
                         </Typography>
                         <Typography variant="h7">
-                            Create your own school by registering as an admin.
+                            Создайте свою школу, зарегистрировавшись в качестве администратора.
                             <br />
-                            You will be able to add students and faculty and
-                            manage the system.
+                            Вы сможете добавлять студентов и преподавателей и
+                            управлять системой.
                         </Typography>
                         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
                             <TextField
@@ -103,12 +103,12 @@ const AdminRegisterPage = () => {
                                 required
                                 fullWidth
                                 id="adminName"
-                                label="Enter your name"
+                                label="Введите свое имя"
                                 name="adminName"
                                 autoComplete="name"
                                 autoFocus
                                 error={adminNameError}
-                                helperText={adminNameError && 'Name is required'}
+                                helperText={adminNameError && 'Имя обязательно'}
                                 onChange={handleInputChange}
                             />
                             <TextField
@@ -116,11 +116,11 @@ const AdminRegisterPage = () => {
                                 required
                                 fullWidth
                                 id="schoolName"
-                                label="Create your school name"
+                                label="Введите название школы"
                                 name="schoolName"
                                 autoComplete="off"
                                 error={schoolNameError}
-                                helperText={schoolNameError && 'School name is required'}
+                                helperText={schoolNameError && 'Название школы обязательно'}
                                 onChange={handleInputChange}
                             />
                             <TextField
@@ -128,11 +128,11 @@ const AdminRegisterPage = () => {
                                 required
                                 fullWidth
                                 id="email"
-                                label="Enter your email"
+                                label="Введите email"
                                 name="email"
                                 autoComplete="email"
                                 error={emailError}
-                                helperText={emailError && 'Email is required'}
+                                helperText={emailError && 'Email обязательно'}
                                 onChange={handleInputChange}
                             />
                             <TextField
@@ -140,12 +140,12 @@ const AdminRegisterPage = () => {
                                 required
                                 fullWidth
                                 name="password"
-                                label="Password"
+                                label="Пароль"
                                 type={toggle ? 'text' : 'password'}
                                 id="password"
                                 autoComplete="current-password"
                                 error={passwordError}
-                                helperText={passwordError && 'Password is required'}
+                                helperText={passwordError && 'Пароль обязателен'}
                                 onChange={handleInputChange}
                                 InputProps={{
                                     endAdornment: (
@@ -164,7 +164,7 @@ const AdminRegisterPage = () => {
                             <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
                                 <FormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
-                                    label="Remember me"
+                                    label="Запомнить меня"
                                 />
                             </Grid>
                             <LightPurpleButton
@@ -173,15 +173,15 @@ const AdminRegisterPage = () => {
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
                             >
-                                {loader ? <CircularProgress size={24} color="inherit"/> : "Register"}
+                                {loader ? <CircularProgress size={24} color="inherit"/> : "Зарегистрировать"}
                             </LightPurpleButton>
                             <Grid container>
                                 <Grid>
-                                    Already have an account?
+                                    Уже есть аккаунт?
                                 </Grid>
                                 <Grid item sx={{ ml: 2 }}>
                                     <StyledLink to="/Adminlogin">
-                                        Log in
+                                        Войти
                                     </StyledLink>
                                 </Grid>
                             </Grid>
