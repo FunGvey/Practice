@@ -12,16 +12,16 @@ import styled from "styled-components";
 const AddClass = () => {
     const [sclassName, setSclassName] = useState("");
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const userState = useSelector(state => state.user);
     const { status, currentUser, response, error, tempDetails } = userState;
 
-    const adminID = currentUser._id
-    const address = "Sclass"
+    const adminID = currentUser._id;
+    const address = "Sclass";
 
-    const [loader, setLoader] = useState(false)
+    const [loader, setLoader] = useState(false);
     const [message, setMessage] = useState("");
     const [showPopup, setShowPopup] = useState(false);
 
@@ -31,28 +31,29 @@ const AddClass = () => {
     };
 
     const submitHandler = (event) => {
-        event.preventDefault()
-        setLoader(true)
-        dispatch(addStuff(fields, address))
+        event.preventDefault();
+        setLoader(true);
+        dispatch(addStuff(fields, address));
     };
 
     useEffect(() => {
         if (status === 'added' && tempDetails) {
-            navigate("/Admin/classes/class/" + tempDetails._id)
-            dispatch(underControl())
-            setLoader(false)
+            navigate("/Admin/classes/class/" + tempDetails._id);
+            dispatch(underControl());
+            setLoader(false);
         }
         else if (status === 'failed') {
-            setMessage(response)
-            setShowPopup(true)
-            setLoader(false)
+            setMessage(response);
+            setShowPopup(true);
+            setLoader(false);
         }
         else if (status === 'error') {
-            setMessage("Network Error")
-            setShowPopup(true)
-            setLoader(false)
+            setMessage("Network Error");
+            setShowPopup(true);
+            setLoader(false);
         }
     }, [status, navigate, error, response, dispatch, tempDetails]);
+
     return (
         <>
             <StyledContainer>
@@ -69,7 +70,7 @@ const AddClass = () => {
                     </Stack>
                     <form onSubmit={submitHandler}>
                         <Stack spacing={3}>
-                            <TextField
+                            <StyledTextField
                                 label="Create a class"
                                 variant="outlined"
                                 value={sclassName}
@@ -78,7 +79,7 @@ const AddClass = () => {
                                 }}
                                 required
                             />
-                            <BlueButton
+                            <StyledBlueButton
                                 fullWidth
                                 size="large"
                                 sx={{ mt: 3 }}
@@ -87,34 +88,67 @@ const AddClass = () => {
                                 disabled={loader}
                             >
                                 {loader ? <CircularProgress size={24} color="inherit" /> : "Create"}
-                            </BlueButton>
-                            <Button variant="outlined" onClick={() => navigate(-1)}>
+                            </StyledBlueButton>
+                            <StyledButton variant="outlined" onClick={() => navigate(-1)}>
                                 Go Back
-                            </Button>
+                            </StyledButton>
                         </Stack>
                     </form>
                 </StyledBox>
             </StyledContainer>
             <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
         </>
-    )
-}
+    );
+};
 
-export default AddClass
+export default AddClass;
 
 const StyledContainer = styled(Box)`
   flex: 1 1 auto;
   align-items: center;
   display: flex;
   justify-content: center;
+  background: linear-gradient(to bottom, #011627, #020c1b);  /* Added background gradient */
 `;
 
 const StyledBox = styled(Box)`
   max-width: 550px;
   padding: 50px 3rem 50px;
   margin-top: 1rem;
-  background-color: white;
+  background-color: #1f1f38;  /* Updated background color */
+  color: #01b075;  /* Updated text color */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ccc;
+  border: 1px solid #01b075;  /* Updated border color */
   border-radius: 4px;
+`;
+
+const StyledTextField = styled(TextField)`
+  & label.Mui-focused {
+    color: #01b075;  /* Updated label color */
+  }
+  & .MuiOutlinedInput-root {
+    & fieldset {
+      border-color: #01b075;  /* Updated border color */
+    }
+    &:hover fieldset {
+      border-color: #01b075;  /* Updated border color */
+    }
+    &.Mui-focused fieldset {
+      border-color: #01b075;  /* Updated border color */
+    }
+  }
+  & .MuiInputBase-input {
+    color: #01b075;  /* Updated input text color */
+  }
+`;
+
+const StyledBlueButton = styled(BlueButton)`
+  background-color: #01b075 !important;  /* Updated button color */
+  border-color: #01b075 !important;  /* Updated border color */
+  color: white !important;  /* Updated text color */
+`;
+
+const StyledButton = styled(Button)`
+  border-color: #01b075 !important;  /* Updated border color */
+  color: #01b075 !important;  /* Updated text color */
 `;

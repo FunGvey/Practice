@@ -3,20 +3,21 @@ import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Tooltip
 import { Settings, Logout } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 const AccountMenu = () => {
     const [anchorEl, setAnchorEl] = useState(null);
-
     const open = Boolean(anchorEl);
-
     const { currentRole, currentUser } = useSelector(state => state.user);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
         setAnchorEl(null);
     };
+
     return (
         <>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -35,7 +36,7 @@ const AccountMenu = () => {
                     </IconButton>
                 </Tooltip>
             </Box>
-            <Menu
+            <StyledMenu
                 anchorEl={anchorEl}
                 id="account-menu"
                 open={open}
@@ -48,33 +49,33 @@ const AccountMenu = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem>
+                <StyledMenuItem>
                     <Avatar />
-                    <Link to={`/${currentRole}/profile`}>
+                    <StyledLink to={`/${currentRole}/profile`}>
                         Profile
-                    </Link>
-                </MenuItem>
+                    </StyledLink>
+                </StyledMenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
+                <StyledMenuItem onClick={handleClose}>
                     <ListItemIcon>
                         <Settings fontSize="small" />
                     </ListItemIcon>
-                    Settings
-                </MenuItem>
-                <MenuItem>
+                    <StyledText>Settings</StyledText>
+                </StyledMenuItem>
+                <StyledMenuItem>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>
-                    <Link to="/logout">
+                    <StyledLink to="/logout">
                         Logout
-                    </Link>
-                </MenuItem>
-            </Menu>
+                    </StyledLink>
+                </StyledMenuItem>
+            </StyledMenu>
         </>
     );
-}
+};
 
-export default AccountMenu
+export default AccountMenu;
 
 const styles = {
     styledPaper: {
@@ -100,4 +101,30 @@ const styles = {
             zIndex: 0,
         },
     }
-}
+};
+
+const StyledMenu = styled(Menu)`
+  & .MuiPaper-root {
+    background-color: #1f1f38;
+    color: #01b075;
+  }
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  & .MuiListItemIcon-root {
+    color: #01b075;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  color: #01b075;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const StyledText = styled.span`
+  color: #01b075;
+`;

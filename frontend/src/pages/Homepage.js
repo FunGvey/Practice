@@ -1,55 +1,67 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Box, Button } from '@mui/material';
-import styled from 'styled-components';
-import Students from "../assets/students.svg";
+import styled, { createGlobalStyle } from 'styled-components';
+import Students from "../assets/students.png";
 import { LightPurpleButton } from '../components/buttonStyles';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #202125; /* Изменение фона всей страницы */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+`;
 
 const Homepage = () => {
     return (
-        <StyledContainer>
-            <Grid container spacing={0}>
-                <Grid item xs={12} md={6}>
-                    <img src={Students} alt="students" style={{ width: '100%' }} />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <StyledPaper elevation={3}>
-                        <StyledTitle>
-                            Welcome to
-                            <br />
-                            School Management
-                            <br />
-                            System
-                        </StyledTitle>
-                        <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
-                            Seamlessly track attendance, assess performance, and provide feedback.
-                            Access records, view marks, and communicate effortlessly.
-                        </StyledText>
-                        <StyledBox>
-                            <StyledLink to="/choose">
-                                <LightPurpleButton variant="contained" fullWidth>
-                                    Login
-                                </LightPurpleButton>
-                            </StyledLink>
-                            <StyledLink to="/chooseasguest">
-                                <Button variant="outlined" fullWidth
-                                    sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
-                                >
-                                    Login as Guest
-                                </Button>
-                            </StyledLink>
+        <React.Fragment>
+            <GlobalStyle />
+            <StyledContainer>
+                <StyledGrid container spacing={0}>
+                    <Grid item xs={12} md={6}>
+                        <img src={Students} alt="students" style={{ width: '100%' }} />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <StyledPaper elevation={3}>
+                            <StyledTitle>
+                                Welcome to
+                                <br />
+                                School Management
+                                <br />
+                                System
+                            </StyledTitle>
                             <StyledText>
-                                Don't have an account?{' '}
-                                <Link to="/Adminregister" style={{color:"#550080"}}>
-                                    Sign up
-                                </Link>
+                                Streamline school management, class organization, and add students and faculty.
+                                Seamlessly track attendance, assess performance, and provide feedback.
+                                Access records, view marks, and communicate effortlessly.
                             </StyledText>
-                        </StyledBox>
-                    </StyledPaper>
-                </Grid>
-            </Grid>
-        </StyledContainer>
+                            <StyledBox>
+                                <StyledLink to="/choose">
+                                    <LightPurpleButton variant="contained" fullWidth>
+                                        Login
+                                    </LightPurpleButton>
+                                </StyledLink>
+                                <StyledLink to="/chooseasguest">
+                                    <Button variant="outlined" fullWidth
+                                        sx={{ mt: 2, mb: 3, color: "#ffffff", borderColor: "#01b075" }}
+                                    >
+                                        Login as Guest
+                                    </Button>
+                                </StyledLink>
+                                <StyledText>
+                                    Don't have an account?{' '}
+                                    <Link to="/Adminregister" style={{color:"#ffffff"}}>
+                                        Sign up
+                                    </Link>
+                                </StyledText>
+                            </StyledBox>
+                        </StyledPaper>
+                    </Grid>
+                </StyledGrid>
+            </StyledContainer>
+        </React.Fragment>
     );
 };
 
@@ -62,9 +74,17 @@ const StyledContainer = styled(Container)`
   height: 100vh;
 `;
 
+const StyledGrid = styled(Grid)`
+  max-width: 1200px;
+  margin: auto;
+`;
+
 const StyledPaper = styled.div`
   padding: 24px;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const StyledBox = styled(Box)`
@@ -78,8 +98,7 @@ const StyledBox = styled(Box)`
 
 const StyledTitle = styled.h1`
   font-size: 3rem;
-  color: #252525;
-  /* font-family: "Manrope"; */
+  color: #01B075;
   font-weight: bold;
   padding-top: 0;
   letter-spacing: normal;
@@ -87,7 +106,7 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledText = styled.p`
-  /* color: #550080; */
+  color: #01B075;
   margin-top: 30px;
   margin-bottom: 30px; 
   letter-spacing: normal;

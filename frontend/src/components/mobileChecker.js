@@ -12,7 +12,7 @@ useEffect(() => {
     };
 }, []);
 
-{/* {
+{ {
           isMobile ?
             <ActionMenu row={row} actions={actions} />
             :
@@ -30,7 +30,7 @@ useEffect(() => {
                 />
               ))}
             </StyledSpeedDial>
-        } */}
+        }}
 
 const StyledSpeedDial = styled(SpeedDial)`
   .MuiSpeedDial-fab {

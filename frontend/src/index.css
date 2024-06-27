@@ -13,11 +13,12 @@ a {
 }
 
 :root {
-  --color-bg: #1f1f38;
-  --color-bg-variant: #2c2c6c;
-  --color-primary: #4db5ff;
-  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-bg: #202125;
+  --color-bg-variant: #202125;
+  --color-primary: #202125;
+  --color-primary-variant: #202125;
   --color-light: rgba(255, 255, 255, 0.6);
+  --color-text: #01b075; /* Добавленный цвет текста */
 }
 
 /* FORM */
@@ -27,16 +28,12 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* color: #ffffff; */
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1510936111840-65e151ad71bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=890&q=80"); */
-  /* background-color: var(--color-bg);
-  background-size: cover;
-  background-blend-mode: darken; */
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .registerTitle {
   font-size: 50px;
+  color: var(--color-text); /* Применение цвета текста */
 }
 
 .registerForm {
@@ -47,7 +44,7 @@ a {
 
 .registerForm>label {
   margin: 10px 0;
-  color: rgb(0, 0, 0);
+  color: var(--color-text); /* Применение цвета текста */
 }
 
 .registerInput {
@@ -55,6 +52,7 @@ a {
   background-color: white;
   border: none;
   border-radius: 10px;
+  color: var(--color-text); /* Применение цвета текста */
 }
 
 .registerInput:focus {
@@ -64,7 +62,7 @@ a {
 .registerButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: #000000;
+  background-color: var(--color-text); /* Применение цвета текста */
   color: white;
   padding: 10px;
   border: none;
@@ -73,7 +71,7 @@ a {
 }
 
 .registerButton:hover {
-  background-color: #313131;
+  background-color: #019962; /* Изменение цвета при наведении */
 }
 
 @media screen and (max-width: 480px) {

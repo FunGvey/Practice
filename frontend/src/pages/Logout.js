@@ -32,7 +32,7 @@ const Logout = () => {
 export default Logout;
 
 const LogoutContainer = styled.div`
-  border: 1px solid #ccc;
+  border: 1px solid #01b075;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -40,14 +40,15 @@ const LogoutContainer = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #85769f66;
-  color: black;
+  background-color: #1f1f38;
+  color: #01b075;
 `;
 
 const LogoutMessage = styled.p`
   margin-bottom: 20px;
   font-size: 16px;
   text-align: center;
+  color: #01b075;
 `;
 
 const LogoutButton = styled.button`
@@ -57,17 +58,26 @@ const LogoutButton = styled.button`
   font-size: 16px;
   color: #fff;
   cursor: pointer;
+  border: 1px solid #01b075;
 
   &:hover {
-    color: #fff;
+    color: #01b075;
     background-color: #333;
   }
 `;
 
 const LogoutButtonLogout = styled(LogoutButton)`
   background-color: #ea0606;
+
+  &:hover {
+    background-color: #c00505;
+  }
 `;
 
 const LogoutButtonCancel = styled(LogoutButton)`
   background-color: rgb(99, 60, 99);
+
+  &:hover {
+    background-color: rgb(79, 48, 79);
+  }
 `;

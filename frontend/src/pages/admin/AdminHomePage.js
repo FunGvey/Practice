@@ -1,9 +1,8 @@
-import { Container, Grid, Paper } from '@mui/material'
+import { Container, Grid, Paper } from '@mui/material';
 import SeeNotice from '../../components/SeeNotice';
 import Students from "../../assets/img1.png";
 import Classes from "../../assets/img2.png";
 import Teachers from "../../assets/img3.png";
-import Fees from "../../assets/img4.png";
 import styled from 'styled-components';
 import CountUp from 'react-countup';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,9 +17,9 @@ const AdminHomePage = () => {
     const { sclassesList } = useSelector((state) => state.sclass);
     const { teachersList } = useSelector((state) => state.teacher);
 
-    const { currentUser } = useSelector(state => state.user)
+    const { currentUser } = useSelector(state => state.user);
 
-    const adminID = currentUser._id
+    const adminID = currentUser._id;
 
     useEffect(() => {
         dispatch(getAllStudents(adminID));
@@ -63,14 +62,6 @@ const AdminHomePage = () => {
                             <Data start={0} end={numberOfTeachers} duration={2.5} />
                         </StyledPaper>
                     </Grid>
-                    <Grid item xs={12} md={3} lg={3}>
-                        <StyledPaper>
-                            <img src={Fees} alt="Fees" />
-                            <Title>
-                                Fees Collection
-                            </Title>
-                            <Data start={0} end={23000} duration={2.5} prefix="$" />                        </StyledPaper>
-                    </Grid>
                     <Grid item xs={12} md={12} lg={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                             <SeeNotice />
@@ -82,7 +73,6 @@ const AdminHomePage = () => {
     );
 };
 
-
 const StyledPaper = styled(Paper)`
   padding: 16px;
   display: flex;
@@ -91,6 +81,8 @@ const StyledPaper = styled(Paper)`
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  background-color: #202125; /* Background color */
+  color: #ffffff; /* Text color */
 `;
 
 const Title = styled.p`
@@ -99,7 +91,7 @@ const Title = styled.p`
 
 const Data = styled(CountUp)`
   font-size: calc(1.3rem + .6vw);
-  color: green;
+  color: #01b075; /* Adjusted color to #01b075 */
 `;
 
-export default AdminHomePage
+export default AdminHomePage;
