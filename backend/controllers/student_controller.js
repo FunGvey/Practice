@@ -46,10 +46,10 @@ const studentLogIn = async (req, res) => {
                 student.attendance = undefined;
                 res.send(student);
             } else {
-                res.send({ message: "Invalid password" });
+                res.send({ message: "Неверный пароль" });
             }
         } else {
-            res.send({ message: "Student not found" });
+            res.send({ message: "Студент не найден" });
         }
     } catch (err) {
         res.status(500).json(err);
@@ -65,7 +65,7 @@ const getStudents = async (req, res) => {
             });
             res.send(modifiedStudents);
         } else {
-            res.send({ message: "No students found" });
+            res.send({ message: "Студент не найден" });
         }
     } catch (err) {
         res.status(500).json(err);
@@ -150,7 +150,7 @@ const updateExamResult = async (req, res) => {
         const student = await Student.findById(req.params.id);
 
         if (!student) {
-            return res.send({ message: 'Student not found' });
+            return res.send({ message: '' });
         }
 
         const existingResult = student.examResult.find(
@@ -177,7 +177,7 @@ const studentAttendance = async (req, res) => {
         const student = await Student.findById(req.params.id);
 
         if (!student) {
-            return res.send({ message: 'Student not found' });
+            return res.send({ message: 'Студент не найден' });
         }
 
         const subject = await Subject.findById(subName);
