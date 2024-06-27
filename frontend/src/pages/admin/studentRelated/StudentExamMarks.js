@@ -89,7 +89,7 @@ const StudentExamMarks = ({ situation }) => {
             {loading
                 ?
                 <>
-                    <div>Loading...</div>
+                    <div>Загрузка...</div>
                 </>
                 :
                 <>

@@ -85,10 +85,10 @@ const StudentSubjects = () => {
                     Детали Предмета
                 </Typography>
                 <Typography variant="h5" gutterBottom>
-                    You are currently in Class {sclassDetails && sclassDetails.sclassName}
+                    Ваш класс {sclassDetails && sclassDetails.sclassName}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    And these are the subjects:
+                    А это предметы:
                 </Typography>
                 {subjectsList &&
                     subjectsList.map((subject, index) => (
@@ -105,7 +105,7 @@ const StudentSubjects = () => {
     return (
         <>
             {loading ? (
-                <div>Loading...</div>
+                <div>Загрузка...</div>
             ) : (
                 <div>
                     {subjectMarks && Array.isArray(subjectMarks) && subjectMarks.length > 0

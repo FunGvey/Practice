@@ -31,7 +31,7 @@ const ShowTeachers = () => {
     const [message, setMessage] = useState("");
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>Загрузка...</div>;
     } else if (response) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
@@ -56,9 +56,9 @@ const ShowTeachers = () => {
     };
 
     const columns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'teachSubject', label: 'Subject', minWidth: 100 },
-        { id: 'teachSclass', label: 'Class', minWidth: 170 },
+        { id: 'name', label: 'Имя', minWidth: 170 },
+        { id: 'teachSubject', label: 'Предмет', minWidth: 100 },
+        { id: 'teachSclass', label: 'Класс', minWidth: 170 },
     ];
 
     const rows = teachersList.map((teacher) => {
@@ -98,7 +98,7 @@ const ShowTeachers = () => {
                                 </StyledTableCell>
                             ))}
                             <StyledTableCell align="center">
-                                Actions
+                                Действия
                             </StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
@@ -138,7 +138,7 @@ const ShowTeachers = () => {
                                             </IconButton>
                                             <BlueButton variant="contained"
                                                 onClick={() => navigate("/Admin/teachers/teacher/" + row.id)}>
-                                                View
+                                                Просмотр
                                             </BlueButton>
                                         </StyledTableCell>
                                     </StyledTableRow>

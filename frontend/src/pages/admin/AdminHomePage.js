@@ -39,7 +39,7 @@ const AdminHomePage = () => {
                         <StyledPaper>
                             <img src={Students} alt="Students" />
                             <Title>
-                                Total Students
+                                Количество студентов
                             </Title>
                             <Data start={0} end={numberOfStudents} duration={2.5} />
                         </StyledPaper>
@@ -48,7 +48,7 @@ const AdminHomePage = () => {
                         <StyledPaper>
                             <img src={Classes} alt="Classes" />
                             <Title>
-                                Total Classes
+                                Количество классов
                             </Title>
                             <Data start={0} end={numberOfClasses} duration={5} />
                         </StyledPaper>
@@ -57,7 +57,7 @@ const AdminHomePage = () => {
                         <StyledPaper>
                             <img src={Teachers} alt="Teachers" />
                             <Title>
-                                Total Teachers
+                                Количество учителей
                             </Title>
                             <Data start={0} end={numberOfTeachers} duration={2.5} />
                         </StyledPaper>

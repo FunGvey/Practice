@@ -43,9 +43,9 @@ const ShowSubjects = () => {
     }
 
     const subjectColumns = [
-        { id: 'subName', label: 'Sub Name', minWidth: 170 },
-        { id: 'sessions', label: 'Sessions', minWidth: 170 },
-        { id: 'sclassName', label: 'Class', minWidth: 170 },
+        { id: 'subName', label: 'Название предмета', minWidth: 170 },
+        { id: 'sessions', label: 'Сессии', minWidth: 170 },
+        { id: 'sclassName', label: 'Класс', minWidth: 170 },
     ]
 
     const subjectRows = subjectsList.map((subject) => {
@@ -66,7 +66,7 @@ const ShowSubjects = () => {
                 </IconButton>
                 <BlueButton variant="contained"
                     onClick={() => navigate(`/Admin/subjects/subject/${row.sclassID}/${row.id}`)}>
-                    View
+                    Просмотр
                 </BlueButton>
             </>
         );
@@ -86,7 +86,7 @@ const ShowSubjects = () => {
     return (
         <>
             {loading ?
-                <div>Loading...</div>
+                <div>Загрузка...</div>
                 :
                 <>
                     {response ?

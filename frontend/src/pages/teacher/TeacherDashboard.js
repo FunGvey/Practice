@@ -55,7 +55,7 @@ const TeacherDashboard = () => {
                             noWrap
                             sx={{ flexGrow: 1 }}
                         >
-                            Teacher Dashboard
+                            Панель учителя
                         </Typography>
                         <AccountMenu />
                     </Toolbar>

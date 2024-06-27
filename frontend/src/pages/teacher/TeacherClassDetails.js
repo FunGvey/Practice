@@ -26,8 +26,8 @@ const TeacherClassDetails = () => {
     }
 
     const studentColumns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
+        { id: 'name', label: 'Имя', minWidth: 170 },
+        { id: 'rollNum', label: 'Номер зачетки', minWidth: 100 },
     ]
 
     const studentRows = sclassStudents.map((student) => {
@@ -85,7 +85,7 @@ const TeacherClassDetails = () => {
                         navigate("/Teacher/class/student/" + row.id)
                     }
                 >
-                    View
+                    Просмотр
                 </BlueButton>
                 <React.Fragment>
                     <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
@@ -146,11 +146,11 @@ const TeacherClassDetails = () => {
     return (
         <>
             {loading ? (
-                <div>Loading...</div>
+                <div>Загрузка...</div>
             ) : (
                 <>
                     <Typography variant="h4" align="center" gutterBottom>
-                        Class Details
+                        О классе
                     </Typography>
                     {getresponse ? (
                         <>
@@ -161,7 +161,7 @@ const TeacherClassDetails = () => {
                     ) : (
                         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                             <Typography variant="h5" gutterBottom>
-                                Students List:
+                            Список студентов:
                             </Typography>
 
                             {Array.isArray(sclassStudents) && sclassStudents.length > 0 &&

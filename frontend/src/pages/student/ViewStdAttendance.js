@@ -74,7 +74,7 @@ const ViewStdAttendance = () => {
                             <StyledTableCell>Present</StyledTableCell>
                             <StyledTableCell>Total Sessions</StyledTableCell>
                             <StyledTableCell>Attendance Percentage</StyledTableCell>
-                            <StyledTableCell align="center">Actions</StyledTableCell>
+                            <StyledTableCell align="center">Действия</StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
                     {Object.entries(attendanceBySubject).map(([subName, { present, allData, subId, sessions }], index) => {
@@ -99,12 +99,12 @@ const ViewStdAttendance = () => {
                                         <Collapse in={openStates[subId]} timeout="auto" unmountOnExit>
                                             <Box sx={{ margin: 1 }}>
                                                 <Typography variant="h6" gutterBottom component="div">
-                                                    Attendance Details
+                                                    Посещаемость
                                                 </Typography>
                                                 <Table size="small" aria-label="purchases">
                                                     <TableHead>
                                                         <StyledTableRow>
-                                                            <StyledTableCell>Date</StyledTableCell>
+                                                            <StyledTableCell>Дата</StyledTableCell>
                                                             <StyledTableCell align="right">Status</StyledTableCell>
                                                         </StyledTableRow>
                                                     </TableHead>
@@ -151,7 +151,7 @@ const ViewStdAttendance = () => {
         <>
             {loading
                 ? (
-                    <div>Loading...</div>
+                    <div>Загрузка...</div>
                 )
                 :
                 <div>
@@ -178,7 +178,7 @@ const ViewStdAttendance = () => {
                         :
                         <>
                             <Typography variant="h6" gutterBottom component="div">
-                                Currently You Have No Attendance Details
+                                В настоящее время у вас нет данных о посещаемостиently You Have No Attendance Details
                             </Typography>
                         </>
                     }

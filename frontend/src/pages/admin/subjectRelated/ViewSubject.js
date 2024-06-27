@@ -62,7 +62,7 @@ const ViewSubject = () => {
           variant="contained"
           onClick={() => navigate("/Admin/students/student/" + row.id)}
         >
-          View
+          Просмотр
         </BlueButton>
         <PurpleButton
           variant="contained"
@@ -70,7 +70,7 @@ const ViewSubject = () => {
             navigate(`/Admin/subject/student/attendance/${row.id}/${subjectID}`)
           }
         >
-          Take Attendance
+          Посещение Занятия
         </PurpleButton>
       </>
     );
@@ -83,7 +83,7 @@ const ViewSubject = () => {
           variant="contained"
           onClick={() => navigate("/Admin/students/student/" + row.id)}
         >
-          View
+          Просмотр
         </BlueButton>
         <PurpleButton variant="contained"
           onClick={() => navigate(`/Admin/subject/student/marks/${row.id}/${subjectID}`)}>
@@ -110,7 +110,7 @@ const ViewSubject = () => {
         ) : (
           <>
             <Typography variant="h5" gutterBottom>
-              Students List:
+              Список студентов:
             </Typography>
 
             {selectedSection === 'attendance' &&
@@ -123,7 +123,7 @@ const ViewSubject = () => {
             <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
               <BottomNavigation value={selectedSection} onChange={handleSectionChange} showLabels>
                 <BottomNavigationAction
-                  label="Attendance"
+                  label="Посещаемость"
                   value="attendance"
                   icon={selectedSection === 'attendance' ? <TableChartIcon /> : <TableChartOutlinedIcon />}
                 />
@@ -147,31 +147,31 @@ const ViewSubject = () => {
     return (
       <>
         <Typography variant="h4" align="center" gutterBottom>
-          Subject Details
+          О предмете
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Subject Name : {subjectDetails && subjectDetails.subName}
+        Название предмета : {subjectDetails && subjectDetails.subName}
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Subject Code : {subjectDetails && subjectDetails.subCode}
+          Код предмета : {subjectDetails && subjectDetails.subCode}
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Subject Sessions : {subjectDetails && subjectDetails.sessions}
+        Предметные сессии : {subjectDetails && subjectDetails.sessions}
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Number of Students: {numberOfStudents}
+        Количество студентов: {numberOfStudents}
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Class Name : {subjectDetails && subjectDetails.sclassName && subjectDetails.sclassName.sclassName}
+          Класс : {subjectDetails && subjectDetails.sclassName && subjectDetails.sclassName.sclassName}
         </Typography>
         {subjectDetails && subjectDetails.teacher ?
           <Typography variant="h6" gutterBottom>
-            Teacher Name : {subjectDetails.teacher.name}
+            Учитель : {subjectDetails.teacher.name}
           </Typography>
           :
           <GreenButton variant="contained"
             onClick={() => navigate("/Admin/teachers/addteacher/" + subjectDetails._id)}>
-            Add Subject Teacher
+            Добавить учителя предмета
           </GreenButton>
         }
       </>
@@ -181,15 +181,15 @@ const ViewSubject = () => {
   return (
     <>
       {subloading ?
-        < div > Loading...</div >
+        < div > Загрузка...</div >
         :
         <>
           <Box sx={{ width: '100%', typography: 'body1', }} >
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleChange} sx={{ position: 'fixed', width: '100%', bgcolor: 'background.paper', zIndex: 1 }}>
-                  <Tab label="Details" value="1" />
-                  <Tab label="Students" value="2" />
+                  <Tab label="Детали" value="1" />
+                  <Tab label="Студенты" value="2" />
                 </TabList>
               </Box>
               <Container sx={{ marginTop: "3rem", marginBottom: "4rem" }}>

@@ -31,7 +31,7 @@ const ChooseClass = ({ situation }) => {
     }
 
     const sclassColumns = [
-        { id: 'name', label: 'Class Name', minWidth: 170 },
+        { id: 'name', label: 'Класс', minWidth: 170 },
     ]
 
     const sclassRows = sclassesList && sclassesList.length > 0 && sclassesList.map((sclass) => {
@@ -55,19 +55,19 @@ const ChooseClass = ({ situation }) => {
     return (
         <>
             {loading ?
-                <div>Loading...</div>
+                <div>Загрузка...</div>
                 :
                 <>
                     {getresponse ?
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
                             <Button variant="contained" onClick={() => navigate("/Admin/addclass")}>
-                                Add Class
+                                Добавить класс
                             </Button>
                         </Box>
                         :
                         <>
                             <Typography variant="h6" gutterBottom component="div">
-                                Choose a class
+                                Выбрать класс
                             </Typography>
                             {Array.isArray(sclassesList) && sclassesList.length > 0 &&
                                 <TableTemplate buttonHaver={SclassButtonHaver} columns={sclassColumns} rows={sclassRows} />

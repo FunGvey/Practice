@@ -102,7 +102,7 @@ const StudentComplain = () => {
                                 type="submit"
                                 disabled={loader}
                             >
-                                {loader ? <CircularProgress size={24} color="inherit" /> : "Add"}
+                                {loader ? <CircularProgress size={24} color="inherit" /> : "Добавить"}
                             </BlueButton>
                         </form>
                     </div>

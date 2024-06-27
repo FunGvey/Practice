@@ -33,7 +33,7 @@ const ChooseSubject = ({ situation }) => {
     }, [situation]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>Загрузка...</div>;
     } else if (response) {
         return <div>
             <h1>Sorry all subjects have teachers assigned already</h1>
@@ -57,7 +57,7 @@ const ChooseSubject = ({ situation }) => {
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
             <Typography variant="h6" gutterBottom component="div">
-                Choose a subject
+                Выбрать предмет
             </Typography>
             <>
                 <TableContainer>
@@ -67,7 +67,7 @@ const ChooseSubject = ({ situation }) => {
                                 <StyledTableCell></StyledTableCell>
                                 <StyledTableCell align="center">Subject Name</StyledTableCell>
                                 <StyledTableCell align="center">Subject Code</StyledTableCell>
-                                <StyledTableCell align="center">Actions</StyledTableCell>
+                                <StyledTableCell align="center">Действия</StyledTableCell>
                             </StyledTableRow>
                         </TableHead>
                         <TableBody>
@@ -82,7 +82,7 @@ const ChooseSubject = ({ situation }) => {
                                         {situation === "Norm" ?
                                             <GreenButton variant="contained"
                                                 onClick={() => navigate("/Admin/teachers/addteacher/" + subject._id)}>
-                                                Choose
+                                                Выбрать
                                             </GreenButton>
                                             :
                                             <GreenButton variant="contained" disabled={loader}

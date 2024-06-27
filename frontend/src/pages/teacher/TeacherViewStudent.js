@@ -64,20 +64,20 @@ const TeacherViewStudent = () => {
             {loading
                 ?
                 <>
-                    <div>Loading...</div>
+                    <div>Загрузка...</div>
                 </>
                 :
                 <div>
-                    Name: {userDetails.name}
+                    Имя: {userDetails.name}
                     <br />
-                    Roll Number: {userDetails.rollNum}
+                    Номер зачетки: {userDetails.rollNum}
                     <br />
-                    Class: {sclassName.sclassName}
+                    Класс: {sclassName.sclassName}
                     <br />
-                    School: {studentSchool.schoolName}
+                    Школа: {studentSchool.schoolName}
                     <br /><br />
 
-                    <h3>Attendance:</h3>
+                    <h3>Посещаемость:</h3>
                     {subjectAttendance && Array.isArray(subjectAttendance) && subjectAttendance.length > 0
                         &&
                         <>
@@ -89,11 +89,11 @@ const TeacherViewStudent = () => {
                                         <Table key={index}>
                                             <TableHead>
                                                 <StyledTableRow>
-                                                    <StyledTableCell>Subject</StyledTableCell>
+                                                    <StyledTableCell>Предмет</StyledTableCell>
                                                     <StyledTableCell>Present</StyledTableCell>
                                                     <StyledTableCell>Total Sessions</StyledTableCell>
                                                     <StyledTableCell>Attendance Percentage</StyledTableCell>
-                                                    <StyledTableCell align="center">Actions</StyledTableCell>
+                                                    <StyledTableCell align="center">Действия</StyledTableCell>
                                                 </StyledTableRow>
                                             </TableHead>
 
@@ -114,12 +114,12 @@ const TeacherViewStudent = () => {
                                                         <Collapse in={openStates[subId]} timeout="auto" unmountOnExit>
                                                             <Box sx={{ margin: 1 }}>
                                                                 <Typography variant="h6" gutterBottom component="div">
-                                                                    Attendance Details
+                                                                    Посещаемость
                                                                 </Typography>
                                                                 <Table size="small" aria-label="purchases">
                                                                     <TableHead>
                                                                         <StyledTableRow>
-                                                                            <StyledTableCell>Date</StyledTableCell>
+                                                                            <StyledTableCell>Дата</StyledTableCell>
                                                                             <StyledTableCell align="right">Status</StyledTableCell>
                                                                         </StyledTableRow>
                                                                     </TableHead>

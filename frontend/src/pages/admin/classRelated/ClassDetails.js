@@ -84,7 +84,7 @@ const ClassDetails = () => {
                         navigate(`/Admin/class/subject/${classID}/${row.id}`)
                     }}
                 >
-                    View
+                    Просмотр
                 </BlueButton >
             </>
         );
@@ -128,8 +128,8 @@ const ClassDetails = () => {
     }
 
     const studentColumns = [
-        { id: 'name', label: 'Name', minWidth: 170 },
-        { id: 'rollNum', label: 'Roll Number', minWidth: 100 },
+        { id: 'name', label: 'Имя', minWidth: 170 },
+        { id: 'rollNum', label: 'Номер зачетки', minWidth: 100 },
     ]
 
     const studentRows = sclassStudents.map((student) => {
@@ -150,7 +150,7 @@ const ClassDetails = () => {
                     variant="contained"
                     onClick={() => navigate("/Admin/students/student/" + row.id)}
                 >
-                    View
+                    Просмотр
                 </BlueButton>
                 <PurpleButton
                     variant="contained"
@@ -192,7 +192,7 @@ const ClassDetails = () => {
                 ) : (
                     <>
                         <Typography variant="h5" gutterBottom>
-                            Students List:
+                           Список студентов:
                         </Typography>
 
                         <TableTemplate buttonHaver={StudentsButtonHaver} columns={studentColumns} rows={studentRows} />
@@ -218,16 +218,16 @@ const ClassDetails = () => {
         return (
             <>
                 <Typography variant="h4" align="center" gutterBottom>
-                    Class Details
+                    О классе
                 </Typography>
                 <Typography variant="h5" gutterBottom>
-                    This is Class {sclassDetails && sclassDetails.sclassName}
+                Этот класс {sclassDetails && sclassDetails.sclassName}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    Number of Subjects: {numberOfSubjects}
+                Количество предметов: {numberOfSubjects}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    Number of Students: {numberOfStudents}
+                Количество студентов: {numberOfStudents}
                 </Typography>
                 {getresponse &&
                     <GreenButton
@@ -252,17 +252,17 @@ const ClassDetails = () => {
     return (
         <>
             {loading ? (
-                <div>Loading...</div>
+                <div>Загрузка...</div>
             ) : (
                 <>
                     <Box sx={{ width: '100%', typography: 'body1', }} >
                         <TabContext value={value}>
                             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                 <TabList onChange={handleChange} sx={{ position: 'fixed', width: '100%', bgcolor: 'background.paper', zIndex: 1 }}>
-                                    <Tab label="Details" value="1" />
-                                    <Tab label="Subjects" value="2" />
-                                    <Tab label="Students" value="3" />
-                                    <Tab label="Teachers" value="4" />
+                                    <Tab label="Детали" value="1" />
+                                    <Tab label="Предметы" value="2" />
+                                    <Tab label="Студенты" value="3" />
+                                    <Tab label="Учителя" value="4" />
                                 </TabList>
                             </Box>
                             <Container sx={{ marginTop: "3rem", marginBottom: "4rem" }}>

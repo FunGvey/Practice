@@ -35,9 +35,9 @@ const ShowNotices = () => {
     }
 
     const noticeColumns = [
-        { id: 'title', label: 'Title', minWidth: 170 },
-        { id: 'details', label: 'Details', minWidth: 100 },
-        { id: 'date', label: 'Date', minWidth: 170 },
+        { id: 'title', label: 'Заголовок', minWidth: 170 },
+        { id: 'details', label: 'Детали', minWidth: 100 },
+        { id: 'date', label: 'Дата', minWidth: 170 },
     ];
 
     const noticeRows = noticesList && noticesList.length > 0 && noticesList.map((notice) => {
@@ -75,7 +75,7 @@ const ShowNotices = () => {
     return (
         <>
             {loading ?
-                <div>Loading...</div>
+                <div>Загрузка...</div>
                 :
                 <>
                     {response ?

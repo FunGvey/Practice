@@ -48,7 +48,7 @@ const ShowClasses = () => {
   }
 
   const sclassColumns = [
-    { id: 'name', label: 'Class Name', minWidth: 170 },
+    { id: 'name', label: 'Класс', minWidth: 170 },
   ]
 
   const sclassRows = sclassesList && sclassesList.length > 0 && sclassesList.map((sclass) => {
@@ -70,7 +70,7 @@ const ShowClasses = () => {
         </IconButton>
         <BlueButton variant="contained"
           onClick={() => navigate("/Admin/classes/class/" + row.id)}>
-          View
+          Просмотр
         </BlueButton>
         <ActionMenu actions={actions} />
       </ButtonContainer>
@@ -91,7 +91,7 @@ const ShowClasses = () => {
     return (
       <>
         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-          <Tooltip title="Add Students & Subjects">
+          <Tooltip title="Добавить студента & предмет">
             <IconButton
               onClick={handleClick}
               size="small"
@@ -145,13 +145,13 @@ const ShowClasses = () => {
   return (
     <>
       {loading ?
-        <div>Loading...</div>
+        <div>Загрузка...</div>
         :
         <>
           {getresponse ?
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '16px' }}>
               <GreenButton variant="contained" onClick={() => navigate("/Admin/addclass")}>
-                Add Class
+                Добавить класс 
               </GreenButton>
             </Box>
             :
